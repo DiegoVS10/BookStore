@@ -1,0 +1,39 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-home"></i></li>    
+    <li class="breadcrumb-item" aria-current="page"><a>Lista de livros</a></li>
+  </ol>
+</nav>  
+
+<table class="table" martin-top="20px">
+  <thead class="thead-dark">
+    <tr>      
+      <th scope="col">Titulo</th>
+      <th scope="col">Autor</th>
+      <th scope="col">Edição</th>
+      <th scope="col">Editora</th>
+      <th scope="col">ISBN</th>
+      <th scope="col">Quantidade</th>
+      <th scope="col">Preço</th>
+      <th scope="col" colspan="2">Operação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books">  
+      <td>{{book.title}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.edition}}</td>
+      <td>{{book.publisher}}</td>
+      <td>{{book.isbn}}</td>
+      <td>{{book.quantity}}</td>
+      <td>{{book.price | currency:'BRL'}}</td>
+      <td>
+        <button type="button" class="btn btn-primary btn-sm fa fa-edit" (click)="edit(book.id)"> Editar</button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger btn-sm fa fa-trash" (click)="delete(book.id)"> Deletar</button> 
+      </td>
+    </tr> 
+  </tbody>
+</table>
+ 
