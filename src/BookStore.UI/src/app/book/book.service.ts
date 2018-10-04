@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { Observable } from 'rxjs';
 import { Book } from './models/book';
-
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class BookService {
-
-  private url = "http://localhost:55193/api/Livro";
+  
+  private url = environment.apiUrl;
 
   constructor(private api: ApiService) { }
 
